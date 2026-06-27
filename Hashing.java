@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Hashing {
@@ -21,6 +22,8 @@ public class Hashing {
                 hash[arr[i]] += 1; 
         }
 
+
+        System.out.println(Arrays.toString(hash));
 
         int q;
         System.out.println("Enter the Q");

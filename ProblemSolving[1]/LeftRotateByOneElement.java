@@ -13,7 +13,7 @@ public class LeftRotateByOneElement {
         LeftRotateByOneElement le  = new LeftRotateByOneElement();
         le.Lrotate(arr);
         for(int num:arr){
-            System.out.println(num);
+            System.out.println(num  );
         }
     }
 

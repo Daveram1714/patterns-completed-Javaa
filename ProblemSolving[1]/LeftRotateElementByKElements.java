@@ -24,6 +24,25 @@ public class LeftRotateElementByKElements {
 
     }
 
+
+    public static void reverse(int []arr,int start,int end) {
+        while(start < end){
+            int temp =arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public void Optimal(int n,int d,int [] arr){
+            d = d%n;
+            reverse(arr, 0, d-1);
+            reverse(arr, d, n-1);
+            reverse(arr, 0, n-1);
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.err.println("Enter the N value");
@@ -38,7 +57,8 @@ public class LeftRotateElementByKElements {
 
 
         LeftRotateElementByKElements lre = new LeftRotateElementByKElements();
-        lre.Brute(d, n, arr);
+        // lre.Brute(d, n, arr);
+        lre.Optimal(n, d, arr);
         System.err.println("Left ROteted array : ");
         for(int num:arr){
             System.out.print( num);

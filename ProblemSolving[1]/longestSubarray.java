@@ -31,7 +31,7 @@ class longestSubarray {
     }
 
     public int getLongestSubarray(int[] nums, int k) {
-        Map<Long,Integer> preSumMap = new HashMap<>();
+        Map<Long, Integer> preSumMap = new HashMap<>();
         long sum = 0;
         int maxLength = 0;
 
@@ -60,6 +60,26 @@ class longestSubarray {
         return maxLength;
     }
 
+    public int optimal(int arr[], int k) {
+        int maxLength = 0;
+        int left = 0, right = 0;
+        int sum = arr[0];
+        int n = arr.length;
+
+        while(right < n){
+            while(left <= right && sum > k){
+                sum -= arr[left];
+                left++;
+            }
+            if(sum == k){
+                maxLength = Math.max(maxLength, right - left + 1);
+            }
+            right++;
+            if(right < n) sum+= arr[right];
+        }
+        return maxLength;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the Size of the array : ");
@@ -74,7 +94,8 @@ class longestSubarray {
         sc.close();
         longestSubarray ls = new longestSubarray();
         // System.out.println("The value is  : " + ls.Brute(n, k, nums));
-        System.out.println("The value is  : " + ls.getLongestSubarray(nums, k));
+        // System.out.println("The value is  : " + ls.getLongestSubarray(nums, k));
+        System.out.println("The value is  : " + ls.optimal(nums, k));
 
     }
 

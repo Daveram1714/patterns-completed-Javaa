@@ -60,7 +60,7 @@ class MaximumSubArray {
         System.out.println("The Maxmimum Sum is : " + max);
         System.out.print("The Sub arrray for maximum sum is : [");
         for (int i = start_index; i <= end_index; i++) {
-            System.out.print(arr[i]);
+            System.out.print(arr[i]+" ");
 
         }
         System.out.print("]");

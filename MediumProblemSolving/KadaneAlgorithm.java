@@ -1,4 +1,3 @@
-
 class MaximumSubArray {
 
     public int brute(int arr[]) {
